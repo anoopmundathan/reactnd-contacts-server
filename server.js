@@ -3,9 +3,11 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const config = require('./config')
 const contacts = require('./contacts')
+const morgan = require('morgan');
 
 const app = express()
 
+app.use(morgan('dev'));
 app.use(express.static('public'))
 app.use(cors())
 
